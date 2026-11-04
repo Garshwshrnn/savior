@@ -59,7 +59,7 @@
 
 <h2 id="start-event-element"><span>hover here</span> HAPPY BIRTHDAY salvador</h2>
 
-<audio id="bg-audio" controls autoplay>
+<audio id="bg-audio" controls autoplay loop>
   <source src="LGBR.mp3" type="audio/mpeg">
   <source src="LGBR.mov" type="audio/mpeg">
 Your browser does not support the audio element.
@@ -74,7 +74,7 @@ Your browser does not support the audio element.
 		  audio.play()
 			.then(() => {
 			  console.log("Audio playing successfully.");
-			  button.style.display = 'none'; // Hide the button after interaction
+			  //button.style.display = 'none'; // Hide the button after interaction?
 			})
 			.catch(error => {
 			  console.error("Playback failed:", error);
