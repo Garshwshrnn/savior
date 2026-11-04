@@ -8,9 +8,9 @@
   inherits: false;
 }
   body{
-  		background-color: var(--coloryes);
-      animation: colorChange 4s infinite alternate; 
+  	  background-color: white;
       text-align: center;
+      animation: colorChange 4s infinite alternate;
   }
 
   @keyframes colorChange {
@@ -31,7 +31,7 @@
   h2 { 
 	  background-color: white;
       color: transparent; 
-      cursor: pointer;
+      cursor: wait;
       transition: color 1s ease;
 	  font-family: Impact;
       }
@@ -39,25 +39,35 @@
     color: black; 
     font-size: 10 pt;
   } 
+  iframe{
+  	opacity: 0;
+    transition: opacity 0.75s ease-in-out;
+  }
+  div:hover iframe{
+  	opacity: 1;
+  }
 
-  h2:hover { 
+  div:hover h2{ 
     color: var(--coloryes); 
        animation: colorChange 4s infinite alternate; 
   }
-  h2:hover span{ 
+  div:hover span{ 
     color: white; 
     transition: color 0.75s ease-in-out;
   }
 
 </style>
-<body>
+<body id="body">
 
 
 <h1>upon opening this website, turn on volume</h1>
 
+
+<div id="start-event-element">
 <iframe src="https://giphy.com/embed/13Iu9mjLpXF0ek" width="480" height="269" style="" frameBorder="0" allowFullScreen></iframe>
 
-<h2 id="start-event-element"><span>hover here</span> HAPPY BIRTHDAY salvador</h2>
+<h2><span>hover here</span> HAPPY BIRTHDAY salvador</h2>
+</div>
 
 <audio id="bg-audio" controls autoplay loop>
   <source src="LGBR.mp3" type="audio/mpeg">
@@ -75,6 +85,7 @@ Your browser does not support the audio element.
 			.then(() => {
 			  console.log("Audio playing successfully.");
 			  //button.style.display = 'none'; // Hide the button after interaction?
+              document.getElementById('body').style.backgroundColor = "var(--coloryes)";
 			})
 			.catch(error => {
 			  console.error("Playback failed:", error);
