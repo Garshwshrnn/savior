@@ -2,19 +2,25 @@
 <html>
 <style>
 	
+@property --coloryes {
+  syntax: '<color>';
+  initial-value: #3498db;
+  inherits: false;
+}
   body{
+  		background-color: var(--coloryes);
       animation: colorChange 4s infinite alternate; 
   }
 
   @keyframes colorChange {
     0% {
-      background-color: #3498db;
+      --coloryes: #3498db;
     }
     50% {
-      background-color: #f1c40f;
+      --coloryes: #f1c40f;
     }
     100% {
-      background-color: #e74c3c;
+      --coloryes: #e74c3c;
     }
   }
   h1{
@@ -22,6 +28,7 @@
       text-align: center;
   }
   h2 { 
+	  background-color: white;
       color: transparent; 
       cursor: pointer;
       transition: color 1s ease;
@@ -32,7 +39,12 @@
   } 
 
   h2:hover { 
-    color: black; 
+    color: var(--coloryes); 
+       animation: colorChange 4s infinite alternate; 
+  }
+  h2:hover span{ 
+    color: white; 
+    transition: color 0.75s ease-in-out;
   }
 
 </style>
